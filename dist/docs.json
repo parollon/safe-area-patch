@@ -1,0 +1,25 @@
+{
+  "api": {
+    "name": "SafeAreaPatchPlugin",
+    "slug": "safeareapatchplugin",
+    "docs": "",
+    "tags": [],
+    "methods": [
+      {
+        "name": "reconstructInsets",
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "reconstructinsets"
+      }
+    ],
+    "properties": []
+  },
+  "interfaces": [],
+  "enums": [],
+  "typeAliases": [],
+  "pluginConfigs": []
+}
