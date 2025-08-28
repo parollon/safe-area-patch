@@ -3,7 +3,7 @@ import { WebPlugin } from '@capacitor/core';
 import type { SafeAreaPatchPlugin } from './definitions';
 
 export class SafeAreaPatchWeb extends WebPlugin implements SafeAreaPatchPlugin {
-  reconstructInsets(): Promise<void> {
+  patchInsets(): Promise<void> {
     console.log('Not implemented for web');
     
     return Promise.resolve();

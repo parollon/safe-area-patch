@@ -6,14 +6,14 @@
     "tags": [],
     "methods": [
       {
-        "name": "reconstructInsets",
+        "name": "patchInsets",
         "signature": "() => Promise<void>",
         "parameters": [],
         "returns": "Promise<void>",
         "tags": [],
         "docs": "",
         "complexTypes": [],
-        "slug": "reconstructinsets"
+        "slug": "patchInsets"
       }
     ],
     "properties": []

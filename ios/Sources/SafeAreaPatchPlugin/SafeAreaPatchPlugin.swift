@@ -20,4 +20,7 @@ public class SafeAreaPatchPlugin: CAPPlugin, CAPBridgedPlugin {
     //         "value": implementation.echo(value)
     //     ])
     // }
+    @objc func patchInsets(_ call: CAPPluginCall) {
+        call.resolve()
+    }
 }

@@ -14,7 +14,7 @@ npx cap sync
 <docgen-index>
 
 * [`echo(...)`](#echo)
-* [`reconstructInsets()`](#reconstructinsets)
+* [`patchInsets()`](#patchInsets)
 
 </docgen-index>
 
@@ -36,10 +36,10 @@ echo(options: { value: string; }) => Promise<{ value: string; }>
 --------------------
 
 
-### reconstructInsets()
+### patchInsets()
 
 ```typescript
-reconstructInsets() => Promise<void>
+patchInsets() => Promise<void>
 ```
 
 --------------------

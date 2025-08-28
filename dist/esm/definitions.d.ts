@@ -1,3 +1,3 @@
 export interface SafeAreaPatchPlugin {
-    reconstructInsets(): Promise<void>;
+    patchInsets(): Promise<void>;
 }

@@ -43,7 +43,7 @@ public class SafeAreaPatchPlugin extends Plugin {
 
 
   @PluginMethod
-  public void reconstructInsets(PluginCall call) {
+  public void patchInsets(PluginCall call) {
     Activity activity = bridge.getActivity();
     if (activity == null) {
       call.reject("Activity is null");

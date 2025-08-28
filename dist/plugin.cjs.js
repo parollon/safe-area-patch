@@ -7,7 +7,7 @@ const SafeAreaPatch = core.registerPlugin('SafeAreaPatch', {
 });
 
 class SafeAreaPatchWeb extends core.WebPlugin {
-    reconstructInsets() {
+    patchInsets() {
         console.log('Not implemented for web');
         return Promise.resolve();
     }
