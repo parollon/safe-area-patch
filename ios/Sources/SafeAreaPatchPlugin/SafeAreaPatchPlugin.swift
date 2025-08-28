@@ -14,10 +14,10 @@ public class SafeAreaPatchPlugin: CAPPlugin, CAPBridgedPlugin {
     ]
     private let implementation = SafeAreaPatch()
 
-    @objc func echo(_ call: CAPPluginCall) {
-        let value = call.getString("value") ?? ""
-        call.resolve([
-            "value": implementation.echo(value)
-        ])
-    }
+    // @objc func echo(_ call: CAPPluginCall) {
+    //     let value = call.getString("value") ?? ""
+    //     call.resolve([
+    //         "value": implementation.echo(value)
+    //     ])
+    // }
 }

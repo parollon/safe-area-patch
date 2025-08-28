@@ -8,18 +8,9 @@ export class SafeAreaPatchWeb extends WebPlugin implements SafeAreaPatchPlugin {
     
     return Promise.resolve();
   }
-  async echo(options: { value: string }): Promise<{ value: string }> {
-    console.log('ECHO', options);
-    return options;
-  }
+  // async echo(options: { value: string }): Promise<{ value: string }> {
+  //   console.log('ECHO', options);
+  //   return options;
+  // }
 }
-/*
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/parollon/safe-area-patch.git"
-  },
-  "bugs": {
-    "url": "https://github.com/parollon/safe-area-patch/issues"
-  },
-
-*/
+ 

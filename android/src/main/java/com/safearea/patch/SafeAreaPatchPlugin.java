@@ -32,14 +32,14 @@ public class SafeAreaPatchPlugin extends Plugin {
 
     private SafeAreaPatch implementation = new SafeAreaPatch();
 
-    @PluginMethod
-    public void echo(PluginCall call) {
-        String value = call.getString("value");
+    // @PluginMethod
+    // public void echo(PluginCall call) {
+    //     String value = call.getString("value");
 
-        JSObject ret = new JSObject();
-        ret.put("value", implementation.echo(value));
-        call.resolve(ret);
-    }
+    //     JSObject ret = new JSObject();
+    //     ret.put("value", implementation.echo(value));
+    //     call.resolve(ret);
+    // }
 
 
   @PluginMethod
