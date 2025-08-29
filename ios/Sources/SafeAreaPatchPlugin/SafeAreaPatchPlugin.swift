@@ -10,7 +10,8 @@ public class SafeAreaPatchPlugin: CAPPlugin, CAPBridgedPlugin {
     public let identifier = "SafeAreaPatchPlugin"
     public let jsName = "SafeAreaPatch"
     public let pluginMethods: [CAPPluginMethod] = [
-        CAPPluginMethod(name: "echo", returnType: CAPPluginReturnPromise)
+        // CAPPluginMethod(name: "echo", returnType: CAPPluginReturnPromise),
+        CAPPluginMethod(name: "patchInsets", returnType: CAPPluginReturnPromise)
     ]
     private let implementation = SafeAreaPatch()
 
@@ -21,6 +22,6 @@ public class SafeAreaPatchPlugin: CAPPlugin, CAPBridgedPlugin {
     //     ])
     // }
     @objc func patchInsets(_ call: CAPPluginCall) {
-        call.resolve()
+        call.resolve([:])
     }
 }
