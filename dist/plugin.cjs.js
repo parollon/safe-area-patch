@@ -8,7 +8,6 @@ const SafeAreaPatch = core.registerPlugin('SafeAreaPatch', {
 
 class SafeAreaPatchWeb extends core.WebPlugin {
     patchInsets() {
-        console.log('Not implemented for web');
         return Promise.resolve();
     }
 }

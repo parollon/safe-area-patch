@@ -7,7 +7,6 @@ var capacitorSafeAreaPatch = (function (exports, core) {
 
     class SafeAreaPatchWeb extends core.WebPlugin {
         patchInsets() {
-            console.log('Not implemented for web');
             return Promise.resolve();
         }
     }
