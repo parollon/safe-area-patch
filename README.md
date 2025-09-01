@@ -1,6 +1,6 @@
 # Ionic Framework Safe Area Patch
 
-Patches the variables `--ion-safe-area-top`, `--ion-safe-area-top`. In Android 16 [EdgeToEdge is no longer optional](https://medium.com/@qamar_safadi/edge-to-edge-is-no-longer-optional-android-16-migration-guide-66f82db639c0) and therefore the variables are 0
+Patches the variables `--ion-safe-area-top`, `--ion-safe-area-bottom`. In Android 16 [EdgeToEdge is no longer optional](https://medium.com/@qamar_safadi/edge-to-edge-is-no-longer-optional-android-16-migration-guide-66f82db639c0) and therefore the variables are 0
 
 
 Currently it can be circumvented by calculating the sizes right when the application starts and overwriting the variables.
