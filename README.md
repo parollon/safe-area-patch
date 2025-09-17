@@ -33,11 +33,39 @@ export class AppComponent {
     SafeAreaPatch.patchInsets(); //patch the insets
   }
 }
-
 ```
+global.scss
+```css
+ion-content::part(scroll) {
+  padding-bottom: var(--ion-safe-area-bottom, 0px) !important;
+}
+```
+<table>
+  <thead>
+    <tr>
+      <th>Safe area patch</th>
+      <th>With css Snippet</th>
+      <th>Without css snippet</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>
+              Screenshot:   
+          </td>
+          <td>
+              <img src="./img/safe-area-bottom.jpg" width="250" />
+          </td>
+          <td>
+  <img src="./img/no-safe-area-bottom.jpg" width="250" />
+          </td>
+      </tr>
+  </tbody>
+</table>
+
 ## Note
 
-The plugin only runs when you call pathInsets(), any changes are not detected and must be re-patched.
+The plugin only runs when you call pathInsets(), any changes are not detected , and if you want to restore to original insets then you need to repatch
 
 
 ```typescript
@@ -54,10 +82,11 @@ export class AppComponent {
   constructor() {
     SafeAreaPatch.patchInsets(); //patch the insets
 
-    this.changeInsetsSizes() //Insets changed
+    this.changeInsetsSizes() 
     .then(
-        ()=>SafeAreaPatch.patchInsets() //Re-patched insets
-    )
+       //some logic that changes insets
+       //After these changes i want to restore original insets
+    ).then( ()=>SafeAreaPatch.patchInsets())//Re-patched insets
   }
   async changeInsetsSizes(){
     //Some logic
