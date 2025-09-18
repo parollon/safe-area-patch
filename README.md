@@ -11,7 +11,7 @@ Currently it can be circumvented by calculating the sizes right when the applica
 ## Install
 
 ```bash
-npm install safe-area-patch
+npm install github:parollon/safe-area-patch
 npx cap sync
 ```
 
