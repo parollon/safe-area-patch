@@ -52,42 +52,17 @@ public class SafeAreaPatchPlugin extends Plugin {
 
     activity.runOnUiThread(() -> {
         Log.d("SafeAreaPatch", "Reconstructing insets");
-      applyEdgeToEdge(activity);
       attachInsetsListener(activity);
-      //updateSystemBarAppearance(activity);
       call.resolve();
     });
 
   }
 
-  private void applyEdgeToEdge(Activity activity) {
-       /* if (activity ==null){
-            return;
-        }
-
-        Window window = activity.getWindow();
-        if ( window == null){
-            return;
-        }
-
-      WindowCompat.setDecorFitsSystemWindows(window, false);
-    EdgeToEdge.enable((AppCompatActivity) activity);
-
-    // Transparent bars
-    window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-
-    window.setStatusBarColor(android.graphics.Color.TRANSPARENT);
-
-    window.setNavigationBarColor(android.graphics.Color.TRANSPARENT);*/
-
-
-  }
-
   private void attachInsetsListener(Activity activity) {
-     if (activity == null){
-          return;
-      }
-      View view = activity.findViewById(android.R.id.content);
+    if (activity == null){
+      return;
+    }
+    View view = activity.findViewById(android.R.id.content);
     WindowInsetsCompat windowInsets_ = ViewCompat.getRootWindowInsets(view);
     if (windowInsets_ == null) {
       return;
@@ -118,7 +93,7 @@ public class SafeAreaPatchPlugin extends Plugin {
   }
 
   private void setSafeAreaInsets(int top, int bottom) {
-     String js =
+    String js =
               "console.log('[SafeAreaPatch] setSafeAreaInsets top:" + top + " bottom:" + bottom + "');" +
                       "document.documentElement.style.setProperty('--ion-safe-area-top','" + top + "px');" +
                       "document.documentElement.style.setProperty('--ion-safe-area-bottom','" + bottom + "px');";
@@ -127,26 +102,8 @@ public class SafeAreaPatchPlugin extends Plugin {
     getBridge().getWebView().evaluateJavascript(js, null);
   }
 
-  private void updateSystemBarAppearance(Activity activity) {
-    /*boolean isDarkMode =
-      (activity.getResources().getConfiguration().uiMode &
-        Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES;
-
-    WindowInsetsControllerCompat controller =
-      WindowCompat.getInsetsController(activity.getWindow(), activity.getWindow().getDecorView());
-    if (controller != null) {
-      // Iconos oscuros en modo claro, claros en modo oscuro
-      controller.setAppearanceLightStatusBars(!isDarkMode);
-      controller.setAppearanceLightNavigationBars(!isDarkMode);
-    }*/
-  }
-
-  // Se llama cuando hay cambios de configuración (incluido cambio de tema)
   @Override
   public void handleOnConfigurationChanged(Configuration newConfig) {
-    Activity activity = getActivity();
-    if (activity != null) {
-      activity.runOnUiThread(() -> updateSystemBarAppearance(activity));
-    }
+    //No action needed
   }
 }
