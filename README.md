@@ -2,6 +2,7 @@
 
 Patches the variables `--ion-safe-area-top`, `--ion-safe-area-bottom`. In Android 16 [EdgeToEdge is no longer optional](https://medium.com/@qamar_safadi/edge-to-edge-is-no-longer-optional-android-16-migration-guide-66f82db639c0) and therefore the variables are 0
 
+Another explanation is in some older versions of Android WebView (< 140) has bug that prevents the access to the safe area values via the safe-area-inset-* CSS env.[Further information](https://issues.chromium.org/issues/40699457). 
 
 Currently it can be circumvented by calculating the sizes right when the application starts and overwriting the variables.
 
@@ -34,7 +35,10 @@ export class AppComponent {
   }
 }
 ```
-global.scss
+
+Adding it to `global.css` applies it to all components and can cause it to apply in places where it shouldn't; it's better to apply it in specific CSS files.
+`my-component.component.scss`/`my-page.page.scss`
+
 ```css
 ion-content::part(scroll) {
   padding-bottom: var(--ion-safe-area-bottom, 0px) !important;
