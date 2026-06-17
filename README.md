@@ -12,7 +12,7 @@ Currently it can be circumvented by calculating the sizes right when the applica
 
 
 ## Install
-
+git@
 ```bash
 npm install github:parollon/safe-area-patch
 npx cap sync
@@ -88,10 +88,9 @@ export class AppComponent {
   constructor() {
     SafeAreaPatch.patchInsets(); //patch the insets
 
-    this.changeInsetsSizes() 
+    this.changeInsetsSizes() // <-- A function you run which changes the insets variables
     .then(
-       //some logic that changes insets
-       //After these changes i want to restore original insets
+       //restore original insets
     ).then( ()=>SafeAreaPatch.patchInsets())//Re-patched insets
   }
   async changeInsetsSizes(){
